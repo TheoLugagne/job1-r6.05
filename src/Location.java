@@ -1,14 +1,14 @@
 public class Location {
 	private Film unFilm;
-	private int nbJours;
+	private int nbJoursLocation;
 	
-	public Location(Film unFilm, int nbJours) {
+	public Location(Film unFilm, int nbJoursLocation) {
 		this.unFilm = unFilm;
-		this.nbJours = nbJours;
+		this.nbJoursLocation = nbJoursLocation;
 	}
 
-	public int getNbJours() {
-		return this.nbJours;
+	public int getNbJoursLocation() {
+		return this.nbJoursLocation;
 	}
 
 	public Film getFilm() {
