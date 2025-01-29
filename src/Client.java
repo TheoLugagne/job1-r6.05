@@ -22,13 +22,13 @@ public class Client {
 	public String situation() {
 		double totalDu = 0;
 		int pointsFidelites = 0;
-		Iterator<Location> forEach = locations.iterator();
+		Iterator<Location> forEach = locations.iterator(); // TODO locationIterator
 		String result = "Situation du client: " + getNom() + "\n";
 		
 		while (forEach.hasNext()) {
-			double du = 0;
-			Location each = (Location) forEach.next();
-			
+			double du = 0; // todo montant location
+			Location each = (Location) forEach.next(); // TODO location
+
 			//determine le montant de chaque location
 			switch (each.getFilm().getCodePrix()) {
 			case Film.NORMAL:
