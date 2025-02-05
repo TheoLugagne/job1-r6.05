@@ -44,10 +44,18 @@ public class Client {
 				if (each.getNbJours() > 3)
 					du += (each.getNbJours() - 3) * 1.5;
 				break;
+			case Film.COFFRET_SERIES_TV:
+				du += each.getNbJours()*0.5;
+				break;
+			case Film.CINEPHILE:
+				du += 2 + 4*each.getNbJours()-1;
+				break;
+
 			}
 			
 			// ajout des points de fidelite
-			pointsFidelites++;
+			if (Film.COFFRET_SERIES_TV != each.getFilm().getCodePrix() || Film.CINEPHILE != each.getFilm().getCodePrix()) pointsFidelites++;
+			if (Film.CINEPHILE == each.getFilm().getCodePrix() && each.getNbJours() == 1) pointsFidelites += 3;
 			// ajout d'un bonus pour les nouveautes louees depuis au moins deux jours
 			if ((each.getFilm().getCodePrix() == Film.NOUVEAUTE) && each.getNbJours() > 1) 
 				pointsFidelites++;

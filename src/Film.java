@@ -3,7 +3,9 @@ public class Film {
 	public static final int ENFANT = 2;
 	public static final int NOUVEAUTE = 1;
 	public static final int NORMAL = 0;
-	
+	public static final int COFFRET_SERIES_TV = 3;
+	public  static final int CINEPHILE = 4;
+
 	private String titre;
 	private int codePrix;
 	
