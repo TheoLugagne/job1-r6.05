@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class ScenarioTest {
+class ScenarioTestTextStatement {
 
     private Scenario sc;
     @BeforeEach
     void setUp() {
-        this.sc = new Scenario();
+        this.sc = new ScenarioTextStatement();
     }
 
     @Test

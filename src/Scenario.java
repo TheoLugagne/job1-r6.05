@@ -1,12 +1,7 @@
-public class Scenario {
+public abstract class Scenario {
 	
-	public String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours ) {
-		Client unClient = new Client(nomClient);
-		Film unFilm = new Film(nomFilm, typeFilm);
-		Location uneLocation = new Location(unFilm, nbJours);
-		unClient.addLocation(uneLocation);
-		return unClient.situation();
-	}
+	public  abstract String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours );
+
 	
 	public void testSituationCumul(Client unClient, String nomFilm, int typeFilm, int nbJours) {
 		Film unFilm = new Film(nomFilm, typeFilm);
@@ -14,10 +9,10 @@ public class Scenario {
 		unClient.addLocation(uneLocation);
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Scenario sc = new Scenario();
 		System.out.println("Coucou, c'est les tests qui commencent");
-		
+
 		// test location film normal d'une duree inferieure a 3 jours
 		String attendu  = "Situation du client: un client\n"
 						+ "\tTaxi Driver\t2.0\n"
@@ -26,7 +21,7 @@ public class Scenario {
 		String obtenu = sc.testSituation("un client","Taxi Driver",Film.NORMAL,2);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test location film normal d'une duree d'au moins 3 jours
 		attendu  = "Situation du client: un client\n"
 			+ "\tTaxi Driver\t3.5\n"
@@ -35,7 +30,7 @@ public class Scenario {
 		obtenu = sc.testSituation("un client","Taxi Driver",Film.NORMAL,3);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test location film nouveauté d'une duree inferieure à 2 jours
 		attendu  = "Situation du client: un client\n"
 			+ "\t11 heures 14\t3.0\n"
@@ -44,7 +39,7 @@ public class Scenario {
 		obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,1);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test location film nouveaute d'une duree d'au moins 2 jours
 		attendu  = "Situation du client: un client\n"
 			+ "\t11 heures 14\t12.0\n"
@@ -53,7 +48,7 @@ public class Scenario {
 		obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,4);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test location film enfant d'une duree inf�rieure a 4 jours
 		attendu  = "Situation du client: un client\n"
 			+ "\tCendrillon\t1.5\n"
@@ -62,7 +57,7 @@ public class Scenario {
 		obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,3);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test location film enfant d'une duree d'au moins 4 jours
 		attendu  = "Situation du client: un client\n"
 			+ "\tCendrillon\t3.0\n"
@@ -71,7 +66,7 @@ public class Scenario {
 		obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,4);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		// test cumul
 		Client unClient = new Client("client cumul");
 		sc.testSituationCumul(unClient,"Taxi Driver",Film.NORMAL,2);
@@ -86,7 +81,7 @@ public class Scenario {
 		obtenu = unClient.situation();
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
-		
+
 		System.out.println("Coucou, c'est les tests qui se terminent");
-	}
+	}*/
 }
