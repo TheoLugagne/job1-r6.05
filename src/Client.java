@@ -20,48 +20,32 @@ public class Client {
 	}
 	
 	public String situation() {
-		double totalDu = 0;
-		int pointsFidelites = 0;
-		Iterator<Location> forEach = locations.iterator(); // TODO locationIterator
-		String result = "Situation du client: " + getNom() + "\n";
-		
-		while (forEach.hasNext()) {
-			double du = 0; // todo montant location
-			Location each = (Location) forEach.next(); // TODO location
-
-			//determine le montant de chaque location
-			switch (each.getFilm().getCodePrix()) {
-			case Film.NORMAL:
-				du += 2;
-				if (each.getNbJours() > 2) 
-					du += (each.getNbJours() - 2) * 1.5;
-				break;
-			case Film.NOUVEAUTE:
-				du += each.getNbJours() * 3;
-				break;
-			case Film.ENFANT:
-				du += 1.5;
-				if (each.getNbJours() > 3)
-					du += (each.getNbJours() - 3) * 1.5;
-				break;
-			}
-			
-			// ajout des points de fidelite
-			pointsFidelites++;
-			// ajout d'un bonus pour les nouveautes louees depuis au moins deux jours
-			if ((each.getFilm().getCodePrix() == Film.NOUVEAUTE) && each.getNbJours() > 1) 
-				pointsFidelites++;
-			
-			// mise en forme location
-			result += "\t" + each.getFilm().getTitre() + "\t" + String.valueOf(du) + "\n";
-			totalDu += du;
-		}
-		
-		// ajout recapitulatif client
-		result += "Total du " + String.valueOf(totalDu) + "\n";
-		result += "Vous gagnez " + String.valueOf(pointsFidelites) + " points de fidelite\n";
-		
-		return result;
+        return "Situation du client: " + getNom() + "\n" + getSituations() +
+                "Total du " + String.valueOf(getMontantTotal()) + "\n" +
+                "Vous gagnez " + String.valueOf(getPointsFidelites()) + " points de fidelite\n";
 	}
 
+	public double getMontantTotal() {
+		double totalDu = 0;
+        for (Location each : locations) {
+            totalDu += each.getLocationPrice();
+        }
+		return totalDu;
+	}
+
+	public int getPointsFidelites() {
+		int pointsFidelites = 0;
+		for (Location each : locations) {
+			pointsFidelites += each.getPointsFidelites();
+		}
+		return pointsFidelites;
+	}
+
+	public String getSituations() {
+        StringBuilder situationBuilder = new StringBuilder();
+        for (Location each : locations) {
+			situationBuilder.append(each.toString());
+		}
+        return situationBuilder.toString();
+	}
 }
