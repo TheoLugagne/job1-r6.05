@@ -28,7 +28,7 @@ public class Client {
 	public double getMontantTotal() {
 		double totalDu = 0;
         for (Location each : locations) {
-            totalDu += each.getLocationPrice();
+            totalDu += each.getFilm().getPrix(each.getNbJours());
         }
 		return totalDu;
 	}
@@ -36,7 +36,7 @@ public class Client {
 	public int getPointsFidelites() {
 		int pointsFidelites = 0;
 		for (Location each : locations) {
-			pointsFidelites += each.getPointsFidelites();
+			pointsFidelites += each.getFilm().getPointsFidelites(each.getNbJours());
 		}
 		return pointsFidelites;
 	}
