@@ -1,12 +1,11 @@
 package objects;
 
-import objects.prix.Prix;
-import objects.prix.PrixEnfant;
-import objects.prix.PrixNormal;
-import objects.prix.PrixNouveau;
+import objects.prix.*;
 
 public class Film {
-	
+
+	public static final int CINEPHILE = 4;
+	public static final int COFFRET_SERIE_TV = 3;
 	public static final int ENFANT = 2;
 	public static final int NOUVEAUTE = 1;
 	public static final int NORMAL = 0;
@@ -35,6 +34,12 @@ public class Film {
 				break;
 			case NORMAL:
 				this.prix = new PrixNormal();
+				break;
+			case COFFRET_SERIE_TV:
+				this.prix = new PrixCoffretSerieTV();
+				break;
+			case CINEPHILE:
+				this.prix = new PrixCinephile();
 				break;
 			default:
 				throw new IllegalArgumentException("Code de prix invalide");
