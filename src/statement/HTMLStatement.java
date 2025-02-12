@@ -1,17 +1,16 @@
 package statement;
 
+import objects.Client;
+
 public class HTMLStatement extends Statement {
 
-    public HTMLStatement(String nom) {
-        super(nom);
-    }
 
     @Override
-    public String situation() {
-return "<p>Situation du client: " + getNom() + "</p>\n" +
-       "<p>" + getSituations() + "</p>\n" +
-       "<p>Total du " + String.valueOf(getMontantTotal()) + "</p>\n" +
-       "<p>Vous gagnez " + String.valueOf(getPointsFidelites()) + " points de fidélité</p>\n";
+    public String situation(Client client) {
+        return "<p>Situation du client: " + client.getNom() + "</p>\n" +
+               "<p>" + client.getSituations() + "</p>\n" +
+               "<p>Total du " + client.getMontantTotal() + "</p>\n" +
+               "<p>Vous gagnez " + client.getPointsFidelites() + " points de fidélité</p>\n";
     }
 
 

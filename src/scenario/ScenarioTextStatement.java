@@ -1,17 +1,20 @@
 package scenario;
 
+import objects.Client;
 import objects.Film;
 import objects.Location;
+import statement.HTMLStatement;
 import statement.Statement;
 import statement.TextStatement;
 
 public class ScenarioTextStatement extends Scenario {
     @Override
     public String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours)	{
-        Statement unClient = new TextStatement(nomClient);
+        Client client = new Client(nomClient);
+        Statement statement = new TextStatement();
         Film unFilm = new Film(nomFilm, typeFilm);
         Location uneLocation = new Location(unFilm, nbJours);
-        unClient.addLocation(uneLocation);
-        return unClient.situation();
+        client.addLocation(uneLocation);
+        return statement.situation(client);
     }
 }

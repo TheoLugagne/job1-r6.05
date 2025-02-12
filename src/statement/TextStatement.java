@@ -1,15 +1,14 @@
 package statement;
 
+import objects.Client;
+
 public class TextStatement extends Statement {
-    public TextStatement(String nom) {
-        super(nom);
-    }
 
     @Override
-    public String situation() {
-        return "Situation du client: " + getNom() + "\n" + getSituations() +
-                "Total du " + String.valueOf(getMontantTotal()) + "\n" +
-                "Vous gagnez " + String.valueOf(getPointsFidelites()) + " points de fidelite\n";
+    public String situation(Client client) {
+        return "Situation du client: " + client.getNom() + "\n" + client.getSituations() +
+                "Total du " + client.getMontantTotal() + "\n" +
+                "Vous gagnez " + client.getPointsFidelites() + " points de fidelite\n";
 
     }
 
