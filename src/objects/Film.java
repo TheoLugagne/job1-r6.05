@@ -10,14 +10,12 @@ public class Film {
 	public static final int NOUVEAUTE = 1;
 	public static final int NORMAL = 0;
 	
-	private String titre;
+	private final String titre;
 	private Prix prix;
-	private int codePrix;
-	
-	public Film(String titre, int codePrix) {
+
+    public Film(String titre, int codePrix) {
 		this.titre = titre;
-		this.codePrix = codePrix;
-		this.setCodePrix(codePrix);
+        this.setCodePrix(codePrix);
 	}
 
 	public String getTitre() {
@@ -52,10 +50,6 @@ public class Film {
 
 	public int getPointsFidelites(int nbJours) {
 		return this.prix.getPointsFidelites(nbJours);
-	}
-
-	public int getCodePrix() {
-		return this.codePrix;
 	}
 	
 }

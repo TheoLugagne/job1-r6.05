@@ -1,8 +1,8 @@
 package objects;
 
 public class Location {
-	private Film unFilm;
-	private int nbJours;
+	private final Film unFilm;
+	private final int nbJours;
 	
 	public Location(Film unFilm, int nbJours) {
 		this.unFilm = unFilm;

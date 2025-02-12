@@ -1,16 +1,16 @@
+package scenario;
+
 import objects.Client;
 import objects.Film;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import scenario.Scenario;
-import scenario.ScenarioHTMLStatement;
 import statement.HTMLStatement;
 import statement.Statement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ScenarioTestHTMLStatement {
+class ScenarioHTMLStatementTest {
 
     private Scenario sc;
     private Statement statement;
@@ -26,10 +26,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film normal d'une duree inferieure a 3 jours")
     public void testFilmNormalDureeInf3H() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\tTaxi Driver\t2.0\n</p>\n"
-                + "<p>Total du 2.0</p>\n"
-                + "<p>Vous gagnez 1 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\tTaxi Driver\t2.0
+                </p>
+                <p>Total du 2.0</p>
+                <p>Vous gagnez 1 points de fidélité</p>
+                """;
 
         this.sc.testSituation(unClient, "Taxi Driver", Film.NORMAL, 2);
         String obtenu = statement.situation(unClient);
@@ -40,10 +43,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film normal d'une duree d'au moins 3 jours")
     public void testFilmNormalDuree3J() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\tTaxi Driver\t3.5\n</p>\n"
-                + "<p>Total du 3.5</p>\n"
-                + "<p>Vous gagnez 1 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\tTaxi Driver\t3.5
+                </p>
+                <p>Total du 3.5</p>
+                <p>Vous gagnez 1 points de fidélité</p>
+                """;
         sc.testSituation(unClient, "Taxi Driver", Film.NORMAL, 3);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -52,10 +58,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film nouveauté d'une duree inferieure à 2 jours")
     public void testFilmNormalDureeSup2j() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\t11 heures 14\t3.0\n</p>\n"
-                + "<p>Total du 3.0</p>\n"
-                + "<p>Vous gagnez 1 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\t11 heures 14\t3.0
+                </p>
+                <p>Total du 3.0</p>
+                <p>Vous gagnez 1 points de fidélité</p>
+                """;
         sc.testSituation(unClient, "11 heures 14", Film.NOUVEAUTE, 1);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -64,10 +73,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film nouveaute d'une duree d'au moins 2 jours")
     public void testFilmNouveauteDureeInf2j() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\t11 heures 14\t12.0\n</p>\n"
-                + "<p>Total du 12.0</p>\n"
-                + "<p>Vous gagnez 2 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\t11 heures 14\t12.0
+                </p>
+                <p>Total du 12.0</p>
+                <p>Vous gagnez 2 points de fidélité</p>
+                """;
         sc.testSituation(unClient, "11 heures 14", Film.NOUVEAUTE, 4);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -76,10 +88,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film enfant d'une duree inf�rieure a 4 jours")
     public void testFilmNouveauteDureeInf4j() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\tCendrillon\t1.5\n</p>\n"
-                + "<p>Total du 1.5</p>\n"
-                + "<p>Vous gagnez 1 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\tCendrillon\t1.5
+                </p>
+                <p>Total du 1.5</p>
+                <p>Vous gagnez 1 points de fidélité</p>
+                """;
         sc.testSituation(unClient, "Cendrillon", Film.ENFANT, 3);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -88,10 +103,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location film enfant d'une duree d'au moins 4 jours")
     public void testFilmNouveauteDureeSup4j() {
-        String attendu = "<p>Situation du client: un client</p>\n"
-                + "<p>\tCendrillon\t3.0\n</p>\n"
-                + "<p>Total du 3.0</p>\n"
-                + "<p>Vous gagnez 1 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: un client</p>
+                <p>\tCendrillon\t3.0
+                </p>
+                <p>Total du 3.0</p>
+                <p>Vous gagnez 1 points de fidélité</p>
+                """;
         sc.testSituation(unClient, "Cendrillon", Film.ENFANT, 4);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -100,10 +118,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location cinephile d'une duréé de 1 jour")
     public void testFilmCinephileDuree1j(){
-        String attendu  = "<p>Situation du client: un client</p>\n"
-                + "<p>\tTaxi Driver\t2.0\n</p>\n"
-                + "<p>Total du 2.0</p>\n"
-                + "<p>Vous gagnez 3 points de fidélité</p>\n";
+        String attendu  = """
+                <p>Situation du client: un client</p>
+                <p>\tTaxi Driver\t2.0
+                </p>
+                <p>Total du 2.0</p>
+                <p>Vous gagnez 3 points de fidélité</p>
+                """;
         sc.testSituation(unClient,"Taxi Driver",Film.CINEPHILE,1);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -112,10 +133,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location cinephile d'une duréé supérieure à 1 jour")
     public void testFilmCinephileDureeSup1j(){
-        String attendu  = "<p>Situation du client: un client</p>\n"
-                + "<p>\tTaxi Driver\t6.0\n</p>\n"
-                + "<p>Total du 6.0</p>\n"
-                + "<p>Vous gagnez 0 points de fidélité</p>\n";
+        String attendu  = """
+                <p>Situation du client: un client</p>
+                <p>\tTaxi Driver\t6.0
+                </p>
+                <p>Total du 6.0</p>
+                <p>Vous gagnez 0 points de fidélité</p>
+                """;
         sc.testSituation(unClient,"Taxi Driver",Film.CINEPHILE,2);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -124,10 +148,13 @@ class ScenarioTestHTMLStatement {
     @Test
     @DisplayName("test location coffret série TV")
     public void testFilmCoffretSerieTV(){
-        String attendu  = "<p>Situation du client: un client</p>\n"
-                + "<p>\tTaxi Driver\t2.0\n</p>\n"
-                + "<p>Total du 2.0</p>\n"
-                + "<p>Vous gagnez 0 points de fidélité</p>\n";
+        String attendu  = """
+                <p>Situation du client: un client</p>
+                <p>\tTaxi Driver\t2.0
+                </p>
+                <p>Total du 2.0</p>
+                <p>Vous gagnez 0 points de fidélité</p>
+                """;
         sc.testSituation(unClient,"Taxi Driver",Film.COFFRET_SERIE_TV,4);
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
@@ -142,12 +169,15 @@ class ScenarioTestHTMLStatement {
         sc.testSituationCumul(unClient, "11 heures 14", Film.NOUVEAUTE, 1);
         sc.testSituationCumul(unClient, "Cendrillon", Film.ENFANT, 2);
         Statement statement = new HTMLStatement();
-        String attendu = "<p>Situation du client: client cumul</p>\n"
-                + "<p>\tTaxi Driver\t2.0\n"
-                + "\t11 heures 14\t3.0\n"
-                + "\tCendrillon\t1.5\n</p>\n"
-                + "<p>Total du 6.5</p>\n"
-                + "<p>Vous gagnez 3 points de fidélité</p>\n";
+        String attendu = """
+                <p>Situation du client: client cumul</p>
+                <p>\tTaxi Driver\t2.0
+                \t11 heures 14\t3.0
+                \tCendrillon\t1.5
+                </p>
+                <p>Total du 6.5</p>
+                <p>Vous gagnez 3 points de fidélité</p>
+                """;
 
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);

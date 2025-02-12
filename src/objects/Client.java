@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Client {
-	private String nom;
-	private List<Location> locations = new LinkedList<Location>();
+	private final String nom;
+	private final List<Location> locations = new LinkedList<>();
 	
 	public Client(String nom) {
 		this.nom = nom;
@@ -17,12 +17,6 @@ public class Client {
 	
 	public String getNom() {
 		return this.nom;
-	}
-	
-	public String situation() {
-        return "Situation du client: " + getNom() + "\n" + getSituations() +
-                "Total du " + String.valueOf(getMontantTotal()) + "\n" +
-                "Vous gagnez " + String.valueOf(getPointsFidelites()) + " points de fidelite\n";
 	}
 
 	public double getMontantTotal() {
