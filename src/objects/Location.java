@@ -19,6 +19,6 @@ public class Location {
 
 	@Override
 	public String toString() {
-		return "\t" + this.getFilm().getTitre() + "\t" + this.unFilm.getPrix(nbJours) + "\n";
+		return "\t" + this.getFilm().getTitre() + "\t" + this.unFilm.getPrix(nbJours);
 	}
 }

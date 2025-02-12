@@ -28,8 +28,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNormalDureeInf3H() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\tTaxi Driver\t2.0
-                </p>
+                <p>\tTaxi Driver\t2.0</p>
                 <p>Total du 2.0</p>
                 <p>Vous gagnez 1 points de fidélité</p>
                 """;
@@ -45,8 +44,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNormalDuree3J() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\tTaxi Driver\t3.5
-                </p>
+                <p>\tTaxi Driver\t3.5</p>
                 <p>Total du 3.5</p>
                 <p>Vous gagnez 1 points de fidélité</p>
                 """;
@@ -60,8 +58,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNormalDureeSup2j() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\t11 heures 14\t3.0
-                </p>
+                <p>\t11 heures 14\t3.0</p>
                 <p>Total du 3.0</p>
                 <p>Vous gagnez 1 points de fidélité</p>
                 """;
@@ -75,8 +72,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNouveauteDureeInf2j() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\t11 heures 14\t12.0
-                </p>
+                <p>\t11 heures 14\t12.0</p>
                 <p>Total du 12.0</p>
                 <p>Vous gagnez 2 points de fidélité</p>
                 """;
@@ -90,8 +86,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNouveauteDureeInf4j() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\tCendrillon\t1.5
-                </p>
+                <p>\tCendrillon\t1.5</p>
                 <p>Total du 1.5</p>
                 <p>Vous gagnez 1 points de fidélité</p>
                 """;
@@ -105,8 +100,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmNouveauteDureeSup4j() {
         String attendu = """
                 <p>Situation du client: un client</p>
-                <p>\tCendrillon\t3.0
-                </p>
+                <p>\tCendrillon\t3.0</p>
                 <p>Total du 3.0</p>
                 <p>Vous gagnez 1 points de fidélité</p>
                 """;
@@ -120,8 +114,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmCinephileDuree1j(){
         String attendu  = """
                 <p>Situation du client: un client</p>
-                <p>\tTaxi Driver\t2.0
-                </p>
+                <p>\tTaxi Driver\t2.0</p>
                 <p>Total du 2.0</p>
                 <p>Vous gagnez 3 points de fidélité</p>
                 """;
@@ -135,8 +128,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmCinephileDureeSup1j(){
         String attendu  = """
                 <p>Situation du client: un client</p>
-                <p>\tTaxi Driver\t6.0
-                </p>
+                <p>\tTaxi Driver\t6.0</p>
                 <p>Total du 6.0</p>
                 <p>Vous gagnez 0 points de fidélité</p>
                 """;
@@ -150,8 +142,7 @@ class ScenarioHTMLStatementTest {
     public void testFilmCoffretSerieTV(){
         String attendu  = """
                 <p>Situation du client: un client</p>
-                <p>\tTaxi Driver\t2.0
-                </p>
+                <p>\tTaxi Driver\t2.0</p>
                 <p>Total du 2.0</p>
                 <p>Vous gagnez 0 points de fidélité</p>
                 """;
@@ -171,10 +162,9 @@ class ScenarioHTMLStatementTest {
         Statement statement = new HTMLStatement();
         String attendu = """
                 <p>Situation du client: client cumul</p>
-                <p>\tTaxi Driver\t2.0
-                \t11 heures 14\t3.0
-                \tCendrillon\t1.5
-                </p>
+                <p>\tTaxi Driver\t2.0</p>
+                <p>\t11 heures 14\t3.0</p>
+                <p>\tCendrillon\t1.5</p>
                 <p>Total du 6.5</p>
                 <p>Vous gagnez 3 points de fidélité</p>
                 """;

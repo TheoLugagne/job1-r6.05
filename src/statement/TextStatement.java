@@ -19,7 +19,7 @@ public class TextStatement extends Statement {
     public String getSituationLocation(List<Location> locations) {
         StringBuilder situationBuilder = new StringBuilder();
         for (Location each : locations) {
-            situationBuilder.append(each.toString());
+            situationBuilder.append(each.toString()).append("\n");
         }
         return situationBuilder.toString();
     }

@@ -11,7 +11,7 @@ public class HTMLStatement extends Statement {
     @Override
     public String situation(Client client) {
         return "<p>Situation du client: " + client.getNom() + "</p>\n" +
-               "<p>" + getSituationLocation(client.getLocations()) + "</p>\n" +
+                getSituationLocation(client.getLocations()) +
                "<p>Total du " + client.getMontantTotal() + "</p>\n" +
                "<p>Vous gagnez " + client.getPointsFidelites() + " points de fidélité</p>\n";
     }
@@ -20,7 +20,7 @@ public class HTMLStatement extends Statement {
     public String getSituationLocation(List<Location> locations) {
         StringBuilder situationBuilder = new StringBuilder();
         for (Location each : locations) {
-            situationBuilder.append(each.toString());
+            situationBuilder.append("<p>").append(each.toString()).append("</p>\n");
         }
         return situationBuilder.toString();
     }
