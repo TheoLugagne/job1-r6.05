@@ -6,7 +6,7 @@ import objects.Location;
 
 public abstract class Scenario {
 	
-	public  abstract String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours );
+	public  abstract String testSituation(Client client, String nomFilm, int typeFilm, int nbJours );
 
 	
 	public void testSituationCumul(Client unClient, String nomFilm, int typeFilm, int nbJours) {

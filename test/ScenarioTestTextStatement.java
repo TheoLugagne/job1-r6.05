@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import scenario.Scenario;
 import scenario.ScenarioTextStatement;
+import statement.Statement;
+import statement.TextStatement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,9 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ScenarioTestTextStatement {
 
     private Scenario sc;
+    private Statement statement;
+    private Client unClient;
     @BeforeEach
     void setUp() {
         this.sc = new ScenarioTextStatement();
+        this.statement = new TextStatement();
+        this.unClient = new Client("un client");
     }
 
     @Test
@@ -24,8 +30,8 @@ class ScenarioTestTextStatement {
                 + "\tTaxi Driver\t2.0\n"
                 + "Total du 2.0\n"
                 + "Vous gagnez 1 points de fidelite\n";
-
-        String obtenu = this.sc.testSituation("un client","Taxi Driver", Film.NORMAL,2);
+        this.sc.testSituation(unClient,"Taxi Driver", Film.NORMAL,2);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
 
@@ -36,8 +42,8 @@ class ScenarioTestTextStatement {
                 + "\tTaxi Driver\t3.5\n"
                 + "Total du 3.5\n"
                 + "Vous gagnez 1 points de fidelite\n";
-
-        String obtenu = sc.testSituation("un client","Taxi Driver",Film.NORMAL,3);
+        sc.testSituation(unClient,"Taxi Driver",Film.NORMAL,3);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
 
@@ -49,7 +55,8 @@ class ScenarioTestTextStatement {
                 + "Total du 3.0\n"
                 + "Vous gagnez 1 points de fidelite\n";
 
-        String obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,1);
+        sc.testSituation(unClient,"11 heures 14",Film.NOUVEAUTE,1);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
 
@@ -60,8 +67,8 @@ class ScenarioTestTextStatement {
                 + "\t11 heures 14\t12.0\n"
                 + "Total du 12.0\n"
                 + "Vous gagnez 2 points de fidelite\n";
-
-        String obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,4);
+        sc.testSituation(unClient,"11 heures 14",Film.NOUVEAUTE,4);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
 
@@ -72,8 +79,8 @@ class ScenarioTestTextStatement {
                 + "\tCendrillon\t1.5\n"
                 + "Total du 1.5\n"
                 + "Vous gagnez 1 points de fidelite\n";
-
-        String obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,3);
+        sc.testSituation(unClient,"Cendrillon",Film.ENFANT,3);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
     @Test
@@ -83,8 +90,8 @@ class ScenarioTestTextStatement {
                 + "\tCendrillon\t3.0\n"
                 + "Total du 3.0\n"
                 + "Vous gagnez 1 points de fidelite\n";
-
-        String obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,4);
+        sc.testSituation(unClient,"Cendrillon",Film.ENFANT,4);
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
     @Test
@@ -101,7 +108,7 @@ class ScenarioTestTextStatement {
                 + "Total du 6.5\n"
                 + "Vous gagnez 3 points de fidelite\n";
 
-        String obtenu = unClient.situation();
+        String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
 

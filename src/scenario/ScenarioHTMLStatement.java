@@ -8,8 +8,7 @@ import statement.Statement;
 
 public class ScenarioHTMLStatement extends Scenario {
     @Override
-    public String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours)	{
-        Client client = new Client(nomClient);
+    public String testSituation(Client client, String nomFilm, int typeFilm, int nbJours)	{
         Statement statement = new HTMLStatement();
         Film unFilm = new Film(nomFilm, typeFilm);
         Location uneLocation = new Location(unFilm, nbJours);
