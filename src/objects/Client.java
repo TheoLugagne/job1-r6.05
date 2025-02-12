@@ -22,16 +22,16 @@ public class Client {
 
 	public double getMontantTotal() {
 		double totalDu = 0;
-        for (Location each : locations) {
-            totalDu += each.getFilm().getPrix(each.getNbJours());
+        for (Location location : locations) {
+            totalDu += location.getFilm().getPrix(location.getNbJours());
         }
 		return totalDu;
 	}
 
 	public int getPointsFidelites() {
 		int pointsFidelites = 0;
-		for (Location each : locations) {
-			pointsFidelites += each.getFilm().getPointsFidelites(each.getNbJours());
+		for (Location location : locations) {
+			pointsFidelites += location.getFilm().getPointsFidelites(location.getNbJours());
 		}
 		return pointsFidelites;
 	}

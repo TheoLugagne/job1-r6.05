@@ -8,8 +8,8 @@ public abstract class Statement {
 
     public String situation(Client client) {
         StringBuilder ch = new StringBuilder(getHeader(client));
-        for (Location each : client.getLocations()) {
-            ch.append(getSituationLocation(each));
+        for (Location location : client.getLocations()) {
+            ch.append(getSituationLocation(location));
         }
         ch.append(getFooter(client));
         return ch.toString();
