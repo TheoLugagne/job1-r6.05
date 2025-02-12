@@ -94,6 +94,43 @@ class ScenarioTestTextStatement {
         String obtenu = statement.situation(unClient);
         assertEquals(attendu, obtenu);
     }
+
+    @Test
+    @DisplayName("test location cinephile d'une duréé de 1 jour")
+    public void testFilmCinephileDuree1j(){
+        String attendu  = "Situation du client: un client\n"
+                + "\tTaxi Driver\t2.0\n"
+                + "Total du 2.0\n"
+                + "Vous gagnez 3 points de fidelite\n";
+        sc.testSituation(unClient,"Taxi Driver",Film.CINEPHILE,1);
+        String obtenu = statement.situation(unClient);
+        assertEquals(attendu, obtenu);
+    }
+
+    @Test
+    @DisplayName("test location cinephile d'une duréé supérieure à 1 jour")
+    public void testFilmCinephileDureeSup1j(){
+        String attendu  = "Situation du client: un client\n"
+                + "\tTaxi Driver\t6.0\n"
+                + "Total du 6.0\n"
+                + "Vous gagnez 0 points de fidelite\n";
+        sc.testSituation(unClient,"Taxi Driver",Film.CINEPHILE,2);
+        String obtenu = statement.situation(unClient);
+        assertEquals(attendu, obtenu);
+    }
+
+    @Test
+    @DisplayName("test location coffret série TV")
+    public void testFilmCoffretSerieTV(){
+        String attendu  = "Situation du client: un client\n"
+                + "\tTaxi Driver\t2.0\n"
+                + "Total du 2.0\n"
+                + "Vous gagnez 0 points de fidelite\n";
+        sc.testSituation(unClient,"Taxi Driver",Film.COFFRET_SERIE_TV,4);
+        String obtenu = statement.situation(unClient);
+        assertEquals(attendu, obtenu);
+    }
+
     @Test
     @DisplayName("client cumul")
     public void testSituationCumul(){
