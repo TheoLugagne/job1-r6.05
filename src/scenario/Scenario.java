@@ -1,3 +1,9 @@
+package scenario;
+
+import objects.Client;
+import objects.Film;
+import objects.Location;
+
 public abstract class Scenario {
 	
 	public  abstract String testSituation(String nomClient, String nomFilm, int typeFilm, int nbJours );
@@ -10,7 +16,7 @@ public abstract class Scenario {
 	}
 	
 	/*public static void main(String[] args) {
-		Scenario sc = new Scenario();
+		scenario.Scenario sc = new scenario.Scenario();
 		System.out.println("Coucou, c'est les tests qui commencent");
 
 		// test location film normal d'une duree inferieure a 3 jours
@@ -18,7 +24,7 @@ public abstract class Scenario {
 						+ "\tTaxi Driver\t2.0\n"
 						+ "Total du 2.0\n"
 						+ "Vous gagnez 1 points de fidelite\n";
-		String obtenu = sc.testSituation("un client","Taxi Driver",Film.NORMAL,2);
+		String obtenu = sc.testSituation("un client","Taxi Driver",objects.Film.NORMAL,2);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
@@ -27,7 +33,7 @@ public abstract class Scenario {
 			+ "\tTaxi Driver\t3.5\n"
 			+ "Total du 3.5\n"
 			+ "Vous gagnez 1 points de fidelite\n";
-		obtenu = sc.testSituation("un client","Taxi Driver",Film.NORMAL,3);
+		obtenu = sc.testSituation("un client","Taxi Driver",objects.Film.NORMAL,3);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
@@ -36,7 +42,7 @@ public abstract class Scenario {
 			+ "\t11 heures 14\t3.0\n"
 			+ "Total du 3.0\n"
 			+ "Vous gagnez 1 points de fidelite\n";
-		obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,1);
+		obtenu = sc.testSituation("un client","11 heures 14",objects.Film.NOUVEAUTE,1);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
@@ -45,7 +51,7 @@ public abstract class Scenario {
 			+ "\t11 heures 14\t12.0\n"
 			+ "Total du 12.0\n"
 			+ "Vous gagnez 2 points de fidelite\n";
-		obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,4);
+		obtenu = sc.testSituation("un client","11 heures 14",objects.Film.NOUVEAUTE,4);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
@@ -54,7 +60,7 @@ public abstract class Scenario {
 			+ "\tCendrillon\t1.5\n"
 			+ "Total du 1.5\n"
 			+ "Vous gagnez 1 points de fidelite\n";
-		obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,3);
+		obtenu = sc.testSituation("un client","Cendrillon",objects.Film.ENFANT,3);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
@@ -63,15 +69,15 @@ public abstract class Scenario {
 			+ "\tCendrillon\t3.0\n"
 			+ "Total du 3.0\n"
 			+ "Vous gagnez 1 points de fidelite\n";
-		obtenu = sc.testSituation("un client","Cendrillon",Film.ENFANT,4);
+		obtenu = sc.testSituation("un client","Cendrillon",objects.Film.ENFANT,4);
 		if (! attendu.equals(obtenu))
 			System.out.println(attendu + obtenu);
 
 		// test cumul
-		Client unClient = new Client("client cumul");
-		sc.testSituationCumul(unClient,"Taxi Driver",Film.NORMAL,2);
-		sc.testSituationCumul(unClient,"11 heures 14",Film.NOUVEAUTE,1);
-		sc.testSituationCumul(unClient,"Cendrillon",Film.ENFANT,2);
+		objects.Client unClient = new objects.Client("client cumul");
+		sc.testSituationCumul(unClient,"Taxi Driver",objects.Film.NORMAL,2);
+		sc.testSituationCumul(unClient,"11 heures 14",objects.Film.NOUVEAUTE,1);
+		sc.testSituationCumul(unClient,"Cendrillon",objects.Film.ENFANT,2);
 		attendu = "Situation du client: client cumul\n"
 			+ "\tTaxi Driver\t2.0\n"
 			+ "\t11 heures 14\t3.0\n"

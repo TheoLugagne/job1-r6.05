@@ -1,3 +1,5 @@
+package statement;
+
 public class TextStatement extends Statement {
     public TextStatement(String nom) {
         super(nom);

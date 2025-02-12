@@ -1,3 +1,5 @@
+package statement;
+
 public class HTMLStatement extends Statement {
 
     public HTMLStatement(String nom) {

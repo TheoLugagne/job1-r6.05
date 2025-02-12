@@ -8,8 +8,8 @@ Ce code permet la gestion de locations de films
  - Un film est constitué d'un titre et d'un code de prix
  - Le code de prix peut avoir pour valeur 0 (Normal), 1 (Nouveauté) et 2 (Enfant)
 
- - Une location est constitué d'un Film et du nombre de jours de la location
- - Un Client est constitué d'une liste de locations et d'un nom
+ - Une location est constitué d'un objects.Film et du nombre de jours de la location
+ - Un objects.Client est constitué d'une liste de locations et d'un nom
 
  - On veut pouvoir afficher la situation du client (nom, montant dû et points de fidélité)
 

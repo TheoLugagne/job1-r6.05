@@ -1,16 +1,21 @@
+import objects.Client;
+import objects.Film;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import scenario.Scenario;
+import scenario.ScenarioHTMLStatement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-class ScenarioTestTextStatement {
+//TODO faire passer ces tests avec le bon code HTML
+//FIX impossible de formater le toString ee film car pas absract
+class ScenarioTestHTMLStatement {
 
     private Scenario sc;
     @BeforeEach
     void setUp() {
-        this.sc = new ScenarioTextStatement();
+        this.sc = new ScenarioHTMLStatement();
     }
 
     @Test
@@ -45,7 +50,7 @@ class ScenarioTestTextStatement {
                 + "Total du 3.0\n"
                 + "Vous gagnez 1 points de fidelite\n";
 
-        String obtenu = sc.testSituation("un client","11 heures 14",Film.NOUVEAUTE,1);
+        String obtenu = sc.testSituation("un client","11 heures 14", Film.NOUVEAUTE,1);
         assertEquals(attendu, obtenu);
     }
 

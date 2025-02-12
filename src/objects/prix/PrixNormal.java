@@ -1,10 +1,10 @@
-package prix;
+package objects.prix;
 
-public class PrixEnfant extends Prix{
+public class PrixNormal extends Prix {
     @Override
     public double getPrix(int nbJours) {
-        double du = 1.5;
-        if (nbJours > 3) du += (nbJours - 3) * 1.5;
+        double du = 2;
+        if (nbJours > 2) du += (nbJours - 2) * 1.5;
         return du;
     }
 

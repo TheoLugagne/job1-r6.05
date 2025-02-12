@@ -1,7 +1,9 @@
-import prix.Prix;
-import prix.PrixEnfant;
-import prix.PrixNormal;
-import prix.PrixNouveau;
+package objects;
+
+import objects.prix.Prix;
+import objects.prix.PrixEnfant;
+import objects.prix.PrixNormal;
+import objects.prix.PrixNouveau;
 
 public class Film {
 	

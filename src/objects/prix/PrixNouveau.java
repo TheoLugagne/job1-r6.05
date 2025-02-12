@@ -1,4 +1,4 @@
-package prix;
+package objects.prix;
 
 public class PrixNouveau extends Prix {
     @Override
