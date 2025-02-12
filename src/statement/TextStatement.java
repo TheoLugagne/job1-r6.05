@@ -3,7 +3,6 @@ package statement;
 import objects.Client;
 import objects.Location;
 
-import java.util.List;
 
 public class TextStatement extends Statement {
 

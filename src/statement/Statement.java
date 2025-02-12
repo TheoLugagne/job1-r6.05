@@ -3,17 +3,16 @@ package statement;
 import objects.Client;
 import objects.Location;
 
-import java.util.List;
 
 public abstract class Statement {
 
     public String situation(Client client) {
-        String ch = getHeader(client);
+        StringBuilder ch = new StringBuilder(getHeader(client));
         for (Location each : client.getLocations()) {
-            ch += getSituationLocation(each);
+            ch.append(getSituationLocation(each));
         }
-        ch += getFooter(client);
-        return ch;
+        ch.append(getFooter(client));
+        return ch.toString();
     }
     public abstract String getSituationLocation(Location locations);
     public abstract String getHeader(Client client);
