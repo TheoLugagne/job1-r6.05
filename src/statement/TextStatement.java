@@ -8,20 +8,19 @@ import java.util.List;
 public class TextStatement extends Statement {
 
     @Override
-    public String situation(Client client) {
-        return "Situation du client: " + client.getNom() + "\n" + getSituationLocation(client.getLocations()) +
-                "Total du " + client.getMontantTotal() + "\n" +
-                "Vous gagnez " + client.getPointsFidelites() + " points de fidelite\n";
-
+    public String getSituationLocation(Location location) {
+        return location.toString() + "\n";
     }
 
     @Override
-    public String getSituationLocation(List<Location> locations) {
-        StringBuilder situationBuilder = new StringBuilder();
-        for (Location each : locations) {
-            situationBuilder.append(each.toString()).append("\n");
-        }
-        return situationBuilder.toString();
+    public String getHeader(Client client) {
+        return "Situation du client: " + client.getNom() + "\n";
+    }
+
+    @Override
+    public String getFooter(Client client) {
+        return "Total du " + client.getMontantTotal() + "\n" +
+                "Vous gagnez " + client.getPointsFidelites() + " points de fidelite\n";
     }
 
 
