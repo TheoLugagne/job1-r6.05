@@ -5,16 +5,17 @@ import java.util.List;
 
 public class Client {
 	private final String nom;
+
 	private final List<Location> locations = new LinkedList<>();
-	
+
 	public Client(String nom) {
 		this.nom = nom;
 	}
-	
+
 	public void addLocation(Location location) {
 		this.locations.add(location);
 	}
-	
+
 	public String getNom() {
 		return this.nom;
 	}
@@ -35,11 +36,7 @@ public class Client {
 		return pointsFidelites;
 	}
 
-	public String getSituations() {
-        StringBuilder situationBuilder = new StringBuilder();
-        for (Location each : locations) {
-			situationBuilder.append(each.toString());
-		}
-        return situationBuilder.toString();
+	public List<Location> getLocations() {
+		return locations;
 	}
 }
